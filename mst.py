@@ -240,7 +240,7 @@ def image_to_graph(I):
     height = I.shape[0]
     width = I.shape[1]
 
-    # -------------------------- IMPLEMENT BELOW YOURSELF -------------------- #
+
     # Insert vertices and construct vertices_2d such that vertices_2d[i,j] holds
     # the Vertex object which is based on I[i,j]. This is useful to construct
     # since each Edge needs to connect the vertices in a special way as instructed.
@@ -269,7 +269,7 @@ def image_to_graph(I):
                 down_vertex = vertices_2d[i+1, j]
                 weight = compute_weight(current_vertex._color, down_vertex._color)
                 G.insert_edge(current_vertex, down_vertex, weight)
-    # -------------------------- IMPLEMENT ABOVE YOURSELF -------------------- #
+    
 
     return G
 
