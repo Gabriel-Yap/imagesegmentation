@@ -1,20 +1,3 @@
-"""
-NAME: GABRIEL HAO WEI YAP
-YID: 2024148069
-
-CAS2103: Data Structures
-mst.py
-Instructor: Seong Jae Hwang
-
-Minimum Spanning Tree utils for HW4.
-
-Modified from the code provided in
-"Data Structures & Algorithms in Python" by
-Michael T. Goodrich, Roberto Tamassia, and Michael H. Goldwasser
-
-Do not distribute outside of this course.
-"""
-
 import numpy as np
 from queue import PriorityQueue
 
@@ -237,9 +220,6 @@ def mst_kruskal(G):
             
     return tree
 
-# -------------------------- DO NOT CHANGE ABOVE CODES ------------------- #
-
-# -------------------------- IMPLEMENT BELOW YOURSELF -------------------- #
     
 def image_to_graph(I):
     """ Contructs a Graph from an image 2D array
@@ -338,14 +318,7 @@ def segment_kruskal(I, num_seg):
         pq.put((e._weight, counter, e))
         counter += 1
 
-    # -------------------------- IMPLEMENT BELOW YOURSELF -------------------- #
-    # Perform the Kruskal's algorithm. This is VERY similar to the part in mst_kruskal function.
-    # How would you modify the Kruskal's algorithm so you end up with a spanning forest (multiple trees)?
-    
-            
-    # Construct the segmentation matrix. If all the vertices are correctly inserted
-    # into G, then iterating through the vertices and identifying their roots (and their colors)
-    # would be useful.
+
     while forest._num_trees > num_seg and not pq.empty():
         weight, _, edge = pq.get()
         u, v= edge._u, edge._v
@@ -366,6 +339,6 @@ def segment_kruskal(I, num_seg):
                     root = forest.find(vertex_to_position[vertex])
                     segmentation[i,j] = root._element._color
                     break
-    # -------------------------- IMPLEMENT ABOVE YOURSELF -------------------- #
+
             
     return segmentation, spanning_forest
